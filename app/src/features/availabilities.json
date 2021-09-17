@@ -26,7 +26,7 @@
                 {
                     "startDateTime": "2021-09-25T09:00",
                     "endDateTime": "2021-09-25T12:00",
-                    "recurrence": "none"
+                    "recurrence": "fortnightly"
                 }
             ]
         }

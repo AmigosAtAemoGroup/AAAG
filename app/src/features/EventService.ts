@@ -1,3 +1,5 @@
+import * as startEvents from "events.json"; // TODO: not sure what path needs to be
+
 export class EventModel {
   name: string = "";
   startDate: string = "";
@@ -19,8 +21,7 @@ class EventService {
     if (eventJson) {
       this.events = JSON.parse(eventJson) || [];
     } else {
-      this.events = new Array<EventModel>();
-      // TODO: populate events...
+      this.events = JSON.parse(startEvents);
     }
   }
 

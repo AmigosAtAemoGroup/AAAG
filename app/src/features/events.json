@@ -1,0 +1,31 @@
+{
+    "eventList": [
+        {
+            "name": "Kings Park Fun Day",
+            "startTime": "2021-09-22T13:00",
+            "endTime": "2021-09-22T16:00",
+            "location": "Kings Park, Fraser Avenue",
+            "description": "Picnic at Kings Park",
+            "minimumAttendees": "6",
+            "maximunAttendess": "20"
+        },
+        {
+            "name": "Dinner @ C Resturant",
+            "startTime": "2021-09-18T19:00",
+            "endTime": "2021-09-18T22:00",
+            "location": "Martin Place",
+            "description": "3 Courses - from above",
+            "minimumAttendees": "5",
+            "maximunAttendess": "15"
+        },
+        {
+            "name": "Run at Lunch",
+            "startTime": "2021-09-24T12:00",
+            "endTime": "2021-09-24T13:00",
+            "location": "10 Riverside Driv",
+            "description": "One hour Run",
+            "minimumAttendees": "1",
+            "maximunAttendess": "6"
+        }
+    ]
+}
