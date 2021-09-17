@@ -18,6 +18,9 @@ class EventService {
     var eventJson = localStorage.getItem("events");
     if (eventJson) {
       this.events = JSON.parse(eventJson) || [];
+    } else {
+      this.events = new Array<EventModel>();
+      // TODO: populate events...
     }
   }
 
