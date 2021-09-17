@@ -1,0 +1,10 @@
+{
+  "useConfigFiles": true,
+  "cssPreprocessor": "sass",
+  "plugins": {
+    "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-typescript": {},
+    "@vue/cli-plugin-unit-mocha": {},
+    "@vue/cli-plugin-router": {}
+  }
+}
