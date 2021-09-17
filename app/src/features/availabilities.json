@@ -1,0 +1,34 @@
+{
+    "availabilityList": [
+        {
+            "name": "Adam",
+            "availabilities": [
+                {
+                    "startDateTime": "2021-10-01T12:00",
+                    "endDateTime": "2021-10-01T13:00",
+                    "recurrence": "monthly"
+                },
+                {
+                    "startDateTime": "2021-09-25T09:00",
+                    "endDateTime": "2021-09-25T12:00",
+                    "recurrence": "none"
+                }
+            ]
+        },
+        {
+            "name": "Amos",
+            "availabilities": [
+                {
+                    "startDateTime": "2021-09-22T12:00",
+                    "endDateTime": "2021-09-22T13:00",
+                    "recurrence": "weekly"
+                },
+                {
+                    "startDateTime": "2021-09-25T09:00",
+                    "endDateTime": "2021-09-25T12:00",
+                    "recurrence": "none"
+                }
+            ]
+        }
+    ]
+}
