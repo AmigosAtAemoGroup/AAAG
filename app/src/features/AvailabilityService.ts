@@ -1,4 +1,4 @@
-import * as startAvailabilities from "availabilities.json"; // TODO: not sure what path needs to be
+//import * as startAvailabilities from './availabilities.json'; // TODO: not sure what path needs to be
 
 export class AvailabilityModel {
   startDate: string = "";
@@ -14,7 +14,7 @@ class AvailabilityService {
     if (availabilityJson) {
       this.availabilities = JSON.parse(availabilityJson) || [];
     } else {
-      this.availabilities = JSON.parse(startAvailabilities);
+      //this.availabilities = JSON.parse(startAvailabilities);
     }
   }
 
