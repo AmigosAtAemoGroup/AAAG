@@ -1,29 +1,27 @@
 <template>
   <v-app style="background-color: #eceff1">
-    <v-app-bar app color="primary darken-3" dark>
-      <template v-slot:img="{ props }">
-        <v-img
-          v-bind="props"
-          gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
-        ></v-img>
-      </template>
+    <v-app-bar app color="white" flat>
+      <v-container class="py-0 fill-height">
+        <v-avatar class="mr-10" color="grey darken-1" size="32"></v-avatar>
 
-      <v-toolbar-title>Amigos @ Aemo Group</v-toolbar-title>
+        <v-btn :to="{ path: '/home' }" text> Home </v-btn>
 
-      <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
 
-      <template v-slot:extension>
-        <template>
-          <v-tabs align-with-title v-cloak>
-            <v-tab :to="{ path: '/home' }">Home</v-tab>
-          </v-tabs>
-        </template>
-      </template>
-    </v-app-bar>
-    <v-main>
-      <v-container fluid fill-height>
-        <router-view />
+        <v-responsive max-width="260">
+          <v-text-field
+            dense
+            flat
+            hide-details
+            rounded
+            solo-inverted
+          ></v-text-field>
+        </v-responsive>
       </v-container>
+    </v-app-bar>
+
+    <v-main class="grey lighten-3">
+      <router-view />
     </v-main>
   </v-app>
 </template>
