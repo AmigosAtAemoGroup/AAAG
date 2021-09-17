@@ -3,7 +3,7 @@
     <v-sheet min-height="70vh" rounded="lg" class="pa-6">
       <v-row>
         <v-col>
-          <h2>Create Event</h2>
+          <h2>View Event</h2>
         </v-col>
       </v-row>
       <v-row>
@@ -12,6 +12,7 @@
             label="Name *"
             v-model="model.name"
             hide-details
+            readonly
           ></v-text-field>
         </v-col>
       </v-row>
@@ -33,7 +34,6 @@
                 label="Start Date"
                 readonly
                 v-bind="attrs"
-                v-on="on"
                 hide-details
               ></v-text-field>
             </template>
@@ -69,7 +69,6 @@
                 label="Start Time"
                 readonly
                 v-bind="attrs"
-                v-on="on"
                 hide-details
               ></v-text-field>
             </template>
@@ -107,7 +106,6 @@
                 label="End Date"
                 readonly
                 v-bind="attrs"
-                v-on="on"
                 hide-details
               ></v-text-field>
             </template>
@@ -143,7 +141,6 @@
                 label="End Time"
                 readonly
                 v-bind="attrs"
-                v-on="on"
                 hide-details
               ></v-text-field>
             </template>
@@ -171,6 +168,7 @@
             v-model="model.recurring"
             label="Recurring"
             hide-details
+            readonly
           ></v-checkbox>
         </v-col>
       </v-row>
@@ -181,6 +179,7 @@
             label="Location *"
             v-model="model.location"
             hide-details
+            readonly
           ></v-text-field>
         </v-col>
       </v-row>
@@ -192,6 +191,7 @@
             label="Description"
             v-model="model.description"
             hide-details
+            readonly
           ></v-textarea>
         </v-col>
       </v-row>
@@ -203,6 +203,7 @@
             :value="model.minimumAttendees"
             type="number"
             hide-details
+            readonly
           ></v-text-field>
         </v-col>
       </v-row>
@@ -214,18 +215,9 @@
             :value="model.maximumAttendees"
             type="number"
             hide-details
+            readonly
           ></v-text-field>
         </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          <v-btn color="primary" @click="createEvent">Create</v-btn>
-        </v-col>
-      </v-row>
-      <v-row>
-        <div v-for="(e, i) in events" :key="i">
-          {{ e }}
-        </div>
       </v-row>
     </v-sheet>
   </v-container>
@@ -235,6 +227,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import router from "@/router/index";
+import { Route, NavigationGuardNext } from "vue-router";
 import eventService, { EventModel } from "../EventService";
 
 class CreateEventModel implements EventModel {
@@ -264,12 +257,9 @@ export default class CreateEvent extends Vue {
     return eventService.events;
   }
 
-  createEvent() {
-    eventService.createEvent(this.model);
-    router.push({
-      name: "ViewEvent",
-      params: { id: String(eventService.events.length - 1) },
-    });
+  mounted() {
+    var eventId = this.$route.params.id;
+    this.model = eventService.events[Number(eventId)];
   }
 }
 </script>
