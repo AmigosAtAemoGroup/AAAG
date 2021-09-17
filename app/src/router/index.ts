@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-
 import LandingPage from "@/features/landing-page/LandingPage.vue";
+import CreateEvent from "@/features/create-event/CreateEvent.vue";
 
 Vue.use(VueRouter)
 
@@ -12,6 +12,12 @@ const routes: Array<RouteConfig> = [
     name: 'Home',
     component: LandingPage, // Default route to Scada
   },
+  {
+    path: '/create-event',
+    name: 'CreateEvent',
+    component: CreateEvent, // Default route to Scada
+  },
+
 ]
 
 const router = new VueRouter({
